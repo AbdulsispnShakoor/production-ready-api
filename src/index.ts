@@ -4,7 +4,6 @@ import morgan from 'morgan';
 
 
 dotenv.config();
-
 const app = express();
 
 // Middleware
@@ -16,9 +15,11 @@ app.use(morgan('dev'));
 
 
 // Root route
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
   res.send('API is running...');
 });
+
+console.log("server is running")
 
 const PORT = process.env.PORT || 8001;
 app.listen(PORT, () => {
